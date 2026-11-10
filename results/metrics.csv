@@ -1,0 +1,13 @@
+Image,Method,PSNR_dB,MSE
+img1,Baseline,13.37,2991.43
+img1,Linear_Stretching,20.24,615.61
+img1,Hist_Equalization,13.88,2661.02
+img1,Bilateral_Filter,13.48,2918.21
+img2,Baseline,15.85,1690.62
+img2,Linear_Stretching,20.2,620.57
+img2,Hist_Equalization,12.87,3354.66
+img2,Bilateral_Filter,16.19,1562.61
+img3,Baseline,15.29,1922.17
+img3,Linear_Stretching,21.39,471.93
+img3,Hist_Equalization,17.38,1187.57
+img3,Bilateral_Filter,15.55,1811.28
