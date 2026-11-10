@@ -11,6 +11,7 @@ conda activate cv_hw
 conda install --override-channels -c conda-forge "py-opencv>=4.8,<4.10" opencv -y  
 python pipeline.py  
 ## File structure
+'''text
 ├── data/
 │   ├── original/               # Original evaluation images  
 │   ├── degraded/               # Synthetically degraded versions  
@@ -23,6 +24,6 @@ python pipeline.py
 ├── pipeline.py                            
 ├── README.md                   
 └── Report.pdf      
-
+'''
 
 
