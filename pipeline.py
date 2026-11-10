@@ -39,7 +39,7 @@ def linear_stretching(img_bgr):
         L_str = np.clip((L.astype(np.float32) - min_v) * (255.0 / (max_v - min_v)), 0, 255).astype(np.uint8)
     else:
         L_str = L
-    return cv2.cvtColor(cv2.merge([L_str, a, b]), cv2.COLOR_LAB2BGR) #revert back to BGR 
+    return cv2.cvtColor(cv2.merge([L_str, a, b]), cv2.COLOR_LAB2BGR) # revert back to BGR 
 
 # hist euqlization
 def hist_equalization(img_bgr):
@@ -61,7 +61,7 @@ if not images:
 with open("results/metrics.csv", "w") as f_out: # CSV file to store the evaluation results
     f_out.write("Image,Method,PSNR_dB,MSE\n")
     for path in images:
-        nome = os.path.splitext(os.path.basename(path))[0] # 
+        nome = os.path.splitext(os.path.basename(path))[0]
         orig = cv2.imread(path)
         if orig is None:
             continue
@@ -76,11 +76,11 @@ with open("results/metrics.csv", "w") as f_out: # CSV file to store the evaluati
         }
         # saves the outputs and calculates the metrics for each image
         for name_method, img_res in results.items():
-            cv2.imwrite(os.path.join(DIR_ENH, f"{nome}_{name_method}.png"), img_res) #saving the enhanced image to compare it using MSE and PSNR metrics
+            cv2.imwrite(os.path.join(DIR_ENH, f"{nome}_{name_method}.png"), img_res) # saving the enhanced image to compare it using MSE and PSNR metrics
             # calculating evaluation metrics
             mse = round(mse_func(orig, img_res), 2)
             psnr = psnr_func(orig, img_res)
-            f_out.write(f"{nome},{name_method},{psnr},{mse}\n") #write the result to the CSV file
+            f_out.write(f"{nome},{name_method},{psnr},{mse}\n") # write the result to the CSV file
             print(f"[{nome}] {name_method:<20} -> PSNR: {psnr:<8} dB MSE: {mse}") # writing the result also on the console log
             # creating side-by-side comparison with original, degraded and enhanced image
             side_by_side = np.hstack([orig, deg, img_res])
