@@ -70,9 +70,9 @@ with open("results/metrics.csv", "w") as f_out: # CSV file to store the evaluati
         # applying the rest of the enhanced methods
         results = {
             "Baseline": deg, # no enhancement
-            "Linear_Stretching": linear_stretching(deg),
-            "Hist_Equalization": hist_equalization(deg),
-            "Bilateral_Filter": bilateral_denoising(deg)
+            "Linear_Stretching": linear_stretching(deg), # linear stretching method
+            "Hist_Equalization": hist_equalization(deg), # histogram equalization method
+            "Bilateral_Filter": bilateral_denoising(deg) # bilateral denoising method
         }
         # saves the outputs and calculates the metrics for each image
         for name_method, img_res in results.items():
