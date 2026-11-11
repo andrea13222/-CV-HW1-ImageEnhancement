@@ -17,7 +17,7 @@ python pipeline.py
 │   ├── degraded/           # Synthetically degraded versions
 │   └── enhanced/           # Processed results for each image and method
 ├── results/
-│   ├── figures/            # Side-by-side comparison panels [Original | Degraded | Result]
+│   ├── figures/            # Side-by-side comparison images [Original | Degraded | Result]
 │   └── metrics.csv
 ├── pipeline.py
 ├── README.md
